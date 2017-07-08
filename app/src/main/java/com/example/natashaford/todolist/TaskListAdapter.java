@@ -23,12 +23,12 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
     public View  getView(int position, View listItemView, ViewGroup parent){
 
         if (listItemView == null){
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_full_list, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.tasks_list, parent, false);
         }
         Task currentTask = getItem(position);
 
         TextView title = (TextView) listItemView.findViewById(R.id.task_title);
-        title.setText(currentTask.getTitle().toString());
+        title.setText(currentTask.getTitle());
 
         listItemView.setTag(currentTask);
 

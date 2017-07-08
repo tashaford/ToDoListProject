@@ -13,7 +13,7 @@ public class FullListActivity extends menuClass implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tasks_list);
+        setContentView(R.layout.activity_full_list);
 
         TaskList taskList = new TaskList();
         ArrayList<Task> list = taskList.getList();
@@ -28,7 +28,6 @@ public class FullListActivity extends menuClass implements View.OnClickListener{
         Task task = (Task) listItem.getTag();
         Log.d("Task title: ", task.getTitle());
         Intent intent = new Intent(this, TaskActivity.class);
-        intent.putExtra("task", task);
         startActivity(intent);
     }
 
