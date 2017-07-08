@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">ToDoList</string>
+    <string name="home_title">Welcome!</string>
+    <string name="home_task_button">See full task list</string>
+    <string name="home_new_button">Add new task</string>
+    <string name="button_name">Submit</string>
+    <string name="home_info">Information relating how to use app. To be added to later.</string>
+    <string name="home">Home</string>
+    <string name="all_tasks">Full task list</string>
+    <string name="add_task">Add new task</string>
+    <string name="title">Title</string>
+    <string name="details">Details</string>
+    <string name="save">Save</string>
+    <string name="add_new">New task added to full list.</string>
+
 </resources>

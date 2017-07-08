@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FullListActivity"
+            android:parentActivityName=".HomePageActivity"/>
+        <activity android:name=".TaskActivity" />
+        <activity android:name=".NewTaskActivity"
+            android:parentActivityName=".HomePageActivity"></activity>
     </application>
 
 </manifest>
