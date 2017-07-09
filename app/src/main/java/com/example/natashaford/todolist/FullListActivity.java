@@ -16,12 +16,12 @@ public class FullListActivity extends menuClass implements View.OnClickListener{
         setContentView(R.layout.activity_full_list);
 
         TaskList taskList = new TaskList();
-        ArrayList<Task> list = taskList.getList();
+        ArrayList<Task> fullList = taskList.getList();
 
-        TaskListAdapter tasksAdapter = new TaskListAdapter(this, list);
+        TaskListAdapter taskAdapter = new TaskListAdapter(this, fullList);
 
         ListView listView = (ListView) findViewById(R.id.tasks_list);
-        listView.setAdapter(tasksAdapter);
+        listView.setAdapter(taskAdapter);
     }
 
     public void getTask(View listItem) {
