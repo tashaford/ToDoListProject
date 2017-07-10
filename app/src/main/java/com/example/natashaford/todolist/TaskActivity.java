@@ -3,9 +3,9 @@ package com.example.natashaford.todolist;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class TaskActivity extends menuClass {
@@ -36,19 +36,25 @@ public class TaskActivity extends menuClass {
     }
 
     public void onClickDelete(View v){
-//        DatabaseHandler db = new DatabaseHandler(this);
-//        Task currentTask = db.deleteTask(task.getId());
-//
-//        Intent intent = new Intent(this, HomePageActivity.class);
-//        startActivity(intent);
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        Integer id = extras.getInt("id");
+        DatabaseHandler db = new DatabaseHandler(this);
+        db.deleteTask(id);
+
+        Intent endIntent = new Intent(this, FullListActivity.class);
+        startActivity(endIntent);
+        Toast.makeText(this, R.string.delete_task_message, Toast.LENGTH_LONG).show();
     }
 
     public void onClickUpdate(View v){
-//        DatabaseHandler db = new DatabaseHandler(this);
-//        Task currentTask = db.updateTask(task.getId(), task.getTitle(), task.getDetails());
-//
-//        Intent intent = new Intent(this, TaskActivity.class);
-//        startActivity(intent);
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        Integer id = extras.getInt("id");
+
+        Intent newIntent = new Intent(this, UpdateTaskActivity.class);
+        newIntent.putExtra("taskId", id);
+        startActivity(newIntent);
     }
 
 

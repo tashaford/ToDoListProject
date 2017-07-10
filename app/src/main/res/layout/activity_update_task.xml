@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.natashaford.todolist.NewTaskActivity">
+    tools:context="com.example.natashaford.todolist.UpdateTaskActivity">
 
     <TextView
         android:id="@+id/update_task_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/add_task"
-        android:textSize="30sp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/update_task"
+        android:textSize="30sp"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/new_title"
@@ -63,7 +63,7 @@
         tools:text="@string/title" />
 
     <EditText
-        android:id="@+id/saveDetails"
+        android:id="@+id/editDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -88,7 +88,7 @@
         android:layout_marginBottom="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:onClick="onClickSave"
+        android:onClick="onClickUpdate"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.501"

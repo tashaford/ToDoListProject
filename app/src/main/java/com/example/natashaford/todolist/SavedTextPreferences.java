@@ -40,4 +40,5 @@ public class SavedTextPreferences {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getString(PREF_SAVEDDETAILS, null);
     }
+
 }

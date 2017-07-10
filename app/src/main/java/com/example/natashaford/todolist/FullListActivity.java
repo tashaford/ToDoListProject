@@ -11,22 +11,23 @@ import java.util.ArrayList;
 
 public class FullListActivity extends menuClass implements View.OnClickListener{
 
+    private CheckBox box;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_list);
 
-        CheckBox checkBox;
+        box = (CheckBox) findViewById(R.id.checkBox);
 
-        checkBox = (CheckBox)findViewById(R.id.checkBox);
+
+
+
+
 
         DatabaseHandler db = new DatabaseHandler(this);
 
         Log.d("INSERT", "Inserting tasks...");
-        db.addTask(new Task("Example title", "Example details"));
-        db.addTask(new Task("Second example", "More details"));
-        db.addTask(new Task("Another example", "Even more details"));
-        db.addTask(new Task("One more example", "Just a bit more details"));
 
         Log.d("READING", "Reading all tasks....");
         ArrayList<Task> tasks = db.getAllTasks();
@@ -44,6 +45,7 @@ public class FullListActivity extends menuClass implements View.OnClickListener{
         }
     }
 
+
     public void onClick(View listItem) {
         Task task = (Task) listItem.getTag();
         Integer outputId = task.getId();
@@ -52,6 +54,5 @@ public class FullListActivity extends menuClass implements View.OnClickListener{
         intent.putExtra("id", outputId);
         startActivity(intent);
     }
-
 
 }

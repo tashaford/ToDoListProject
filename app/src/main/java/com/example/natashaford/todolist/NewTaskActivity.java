@@ -13,25 +13,23 @@ public class NewTaskActivity extends menuClass {
     EditText titleToSave;
     EditText detailsToSave;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_task);
 
         saveButton = (Button)findViewById(R.id.saveButton);
-        titleToSave = (EditText) findViewById(R.id.saveTitle);
+        titleToSave = (EditText) findViewById(R.id.editTitle);
         detailsToSave = (EditText) findViewById(R.id.saveDetails);
-
     }
 
     public void onClickSave(View v) {
         String titleSave = titleToSave.getText().toString();
         String detailsSave = detailsToSave.getText().toString();
 
-        SavedTextPreferences.setStoredTitle(this, titleSave);
-        SavedTextPreferences.setStoredDetails(this, detailsSave);
-
+        DatabaseHandler db = new DatabaseHandler(this);
+        Task newTask = new Task(titleSave,detailsSave);
+        db.addTask(newTask);
 
         Intent intent = new Intent(this, HomePageActivity.class);
         startActivity(intent);
