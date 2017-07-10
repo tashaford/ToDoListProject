@@ -36,7 +36,7 @@ public class FullListActivity extends menuClass implements View.OnClickListener{
 
 //        TaskList taskList = new TaskList();
 //        ArrayList<Task> fullList = taskList.getList();
-//
+
         TaskListAdapter taskAdapter = new TaskListAdapter(this, tasks);
 
         ListView listView = (ListView) findViewById(R.id.tasks_list);
@@ -44,15 +44,13 @@ public class FullListActivity extends menuClass implements View.OnClickListener{
         }
     }
 
-    public void getTask(View listItem) {
+    public void onClick(View listItem) {
         Task task = (Task) listItem.getTag();
-        Log.d("Task title: ", task.getTitle());
+        Integer outputId = task.getId();
+
         Intent intent = new Intent(this, TaskActivity.class);
+        intent.putExtra("id", outputId);
         startActivity(intent);
-    }
-
-    public void onClick(View v) {
-
     }
 
 

@@ -14,5 +14,7 @@
     <string name="add_new">New task added to full list.</string>
     <string name="list_check">Completed?</string>
     <string name="list_title">Tasks</string>
+    <string name="deleteButton">Delete</string>
+    <string name="updateButton">Update</string>
 
 </resources>

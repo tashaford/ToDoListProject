@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewTaskActivity extends menuClass {
 
     Button saveButton;
-    TextView titleToSave;
-    TextView detailsToSave;
+    EditText titleToSave;
+    EditText detailsToSave;
 
 
     @Override
@@ -21,15 +20,19 @@ public class NewTaskActivity extends menuClass {
         setContentView(R.layout.activity_new_task);
 
         saveButton = (Button)findViewById(R.id.saveButton);
-        titleToSave = (EditText)findViewById(R.id.saveTitle);
-        detailsToSave = (EditText)findViewById(R.id.saveDetails);
-
+        titleToSave = (EditText) findViewById(R.id.saveTitle);
+        detailsToSave = (EditText) findViewById(R.id.saveDetails);
 
     }
 
     public void onClickSave(View v) {
-        SavedTextPreferences.setStoredTitle(this, titleToSave.getText().toString());
-        SavedTextPreferences.setStoredDetails(this, detailsToSave.getText().toString());
+        String titleSave = titleToSave.getText().toString();
+        String detailsSave = detailsToSave.getText().toString();
+
+        SavedTextPreferences.setStoredTitle(this, titleSave);
+        SavedTextPreferences.setStoredDetails(this, detailsSave);
+
+
         Intent intent = new Intent(this, HomePageActivity.class);
         startActivity(intent);
 
