@@ -8,12 +8,11 @@
 
     <TextView
         android:id="@+id/saved_title"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
-        android:text="Saved title will display here"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,12 +20,11 @@
 
     <TextView
         android:id="@+id/saved_details"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="500dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:text="Saved details will display here"
         android:textSize="30sp"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
