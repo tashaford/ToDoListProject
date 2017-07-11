@@ -15,6 +15,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
     EditText titleToSave;
     EditText detailsToSave;
     CheckBox completedToSave;
+    EditText priorityToSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
         titleToSave = (EditText) findViewById(R.id.editTitle);
         detailsToSave = (EditText) findViewById(R.id.editDetails);
         completedToSave = (CheckBox) findViewById(R.id.checkBox);
+        priorityToSave = (EditText) findViewById(R.id.editPriority);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -37,6 +39,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
         titleToSave.setText(currentTask.getTitle());
         detailsToSave.setText(currentTask.getDetails());
         completedToSave.setChecked(currentTask.getCompleted());
+        priorityToSave.setText(currentTask.getPriority());
 
     }
 
@@ -44,13 +47,14 @@ public class UpdateTaskActivity extends AppCompatActivity {
         String titleSave = titleToSave.getText().toString();
         String detailsSave = detailsToSave.getText().toString();
         Boolean completedSave = completedToSave.isChecked();
+        String prioritySave = priorityToSave.getText().toString();
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         Integer id = extras.getInt("taskId");
 
         DatabaseHandler db = new DatabaseHandler(this);
-        db.updateTask(id, titleSave, detailsSave, completedSave);
+        db.updateTask(id, titleSave, detailsSave, completedSave, prioritySave);
 
         Intent nextIntent = new Intent(this, HomePageActivity.class);
         startActivity(nextIntent);

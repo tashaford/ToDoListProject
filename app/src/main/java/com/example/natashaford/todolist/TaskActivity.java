@@ -12,6 +12,7 @@ public class TaskActivity extends menuClass {
 
     TextView titleToShow;
     TextView detailsToShow;
+    TextView priorityToShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,11 @@ public class TaskActivity extends menuClass {
 
         titleToShow = (TextView) findViewById(R.id.saved_title);
         detailsToShow = (TextView) findViewById(R.id.saved_details);
+        priorityToShow = (TextView) findViewById(R.id.saved_priority);
 
         titleToShow.setText(currentTask.getTitle());
         detailsToShow.setText(currentTask.getDetails());
+        priorityToShow.setText(currentTask.getPriority());
     }
 
     public void onClickDelete(View v){

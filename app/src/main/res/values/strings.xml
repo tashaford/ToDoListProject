@@ -9,6 +9,8 @@
     <string name="add_task">Add new task</string>
     <string name="title">Title</string>
     <string name="details">Details</string>
+    <string name="priority">Priority</string>
+    <string name="prior_ex">e.g. High, medium, low</string>
     <string name="save">Save</string>
     <string name="add_new">New task added to full list.</string>
     <string name="list_prior">Priority</string>

@@ -5,23 +5,21 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 6;
 
     private static final String DATABASE_NAME = "tasksDB";
 
     private static final String TABLE_TASKS = "tasks";
 
-
     private static final String KEY_ID = "id";
     private static final String KEY_TITLE = "title";
     private static final String KEY_DETAILS = "details";
     private static final String KEY_COMPLETED = "completed";
+    private static final String KEY_PRIORITY = "priority";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -32,7 +30,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 "(" + KEY_ID + " INTEGER PRIMARY KEY,"
                 + KEY_TITLE + " TEXT, "
                 + KEY_DETAILS + " TEXT, "
-                + KEY_COMPLETED + " INTEGER)";
+                + KEY_COMPLETED + " INTEGER, "
+                + KEY_PRIORITY + " TEXT)";
         db.execSQL(sql);
     }
 
@@ -47,6 +46,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_TITLE, task.getTitle());
         values.put(KEY_DETAILS, task.getDetails());
         values.put(KEY_COMPLETED, task.getCompleted() ? 1 : 0);
+        values.put(KEY_PRIORITY, task.getPriority());
         db.insert(TABLE_TASKS, null, values);
         db.close();
     }
@@ -56,14 +56,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Task task = null;
 
         Cursor cursor = db.query(TABLE_TASKS, new String[]
-                {KEY_ID, KEY_TITLE, KEY_DETAILS, KEY_COMPLETED},
+                {KEY_ID, KEY_TITLE, KEY_DETAILS, KEY_COMPLETED, KEY_PRIORITY},
                 KEY_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
 
         if (cursor != null) {
             cursor.moveToFirst();
-
-            task = new Task(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getInt(3)>0);
+            task = new Task(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getInt(3)>0, cursor.getString(4));
         }
         return task;
     }
@@ -83,8 +82,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 task.setTitle(cursor.getString(1));
                 task.setDetails(cursor.getString(2));
                 task.setCompleted(cursor.getInt(3)>0);
+                task.setPriority(cursor.getString(4));
                 taskList.add(task);
-
             } while (cursor.moveToNext());
         }
         return taskList;
@@ -100,13 +99,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_TASKS);
     }
 
-    public boolean updateTask(Integer id, String title, String details, boolean completed){
+    public boolean updateTask(Integer id, String title, String details, boolean completed, String priority){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(KEY_ID, id);
         contentValues.put(KEY_TITLE, title);
         contentValues.put(KEY_DETAILS, details);
         contentValues.put(KEY_COMPLETED, completed);
+        contentValues.put(KEY_PRIORITY, priority);
         db.update(TABLE_TASKS, contentValues, KEY_ID + " = ? ", new String[] {Integer.toString(id)});
         return true;
     }
