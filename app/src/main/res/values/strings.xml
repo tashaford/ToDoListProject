@@ -21,8 +21,6 @@
     <string name="deleteButton">Delete</string>
     <string name="updateButton">Update</string>
     <string name="button_name">Submit</string>
-    <string name="high">High Priority</string>
-    <string name="med">Medium Priority</string>
-    <string name="low">Low Priority</string>
+    <string name="completed">Completed?</string>
 
 </resources>

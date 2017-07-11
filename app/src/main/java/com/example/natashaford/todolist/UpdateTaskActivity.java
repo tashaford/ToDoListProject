@@ -25,7 +25,7 @@ public class UpdateTaskActivity extends AppCompatActivity {
         saveButton = (Button)findViewById(R.id.saveButton);
         titleToSave = (EditText) findViewById(R.id.editTitle);
         detailsToSave = (EditText) findViewById(R.id.editDetails);
-        completedToSave = (CheckBox) findViewById(R.id.checkBox);
+        completedToSave = (CheckBox) findViewById(R.id.checkBoxUpdate);
         priorityToSave = (EditText) findViewById(R.id.editPriority);
 
         Intent intent = getIntent();
@@ -61,4 +61,8 @@ public class UpdateTaskActivity extends AppCompatActivity {
 
         Toast.makeText(this, R.string.update_task_message, Toast.LENGTH_LONG).show();
     }
+
+    public void onClickCheckUpdate(View v){
+    }
+
 }
