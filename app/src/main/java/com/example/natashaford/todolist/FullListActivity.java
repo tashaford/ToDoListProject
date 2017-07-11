@@ -1,9 +1,11 @@
 package com.example.natashaford.todolist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ public class FullListActivity extends menuClass{
         setContentView(R.layout.activity_full_list);
 
         DatabaseHandler db = new DatabaseHandler(this);
+
 
         Log.d("INSERT", "Inserting tasks...");
 
@@ -34,9 +37,15 @@ public class FullListActivity extends menuClass{
         }
     }
 
-    public void onClickCheck(View view) {
-    }
+    public void onClickCheck(View v){
+        View parent = (View) v.getParent();
+        Task task = (Task)parent.getTag();
+        task.setCompleted(v.isEnabled());
+        DatabaseHandler db = new DatabaseHandler(this);
+        db.updateTask(task.getId(), task.getTitle(), task.getDetails(), task.getCompleted());
 
+
+    }
 
     public void onClick(View listItem) {
         Task task = (Task) listItem.getTag();
