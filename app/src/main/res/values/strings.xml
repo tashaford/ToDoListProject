@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ToDoList</string>
-    <string name="home_title">Welcome!</string>
+    <string name="home_title">To Do List</string>
     <string name="home_task_button">See full task list</string>
     <string name="home_new_button">Add new task</string>
-    <string name="home_info">You can add, view, update and delete tasks that need completing by using this app.</string>
+    <string name="home_info">Welcome! By using this app you can add, view, update and delete tasks that you need to keep track of.</string>
     <string name="home">Home</string>
     <string name="all_tasks">Full task list</string>
     <string name="add_task">Add new task</string>

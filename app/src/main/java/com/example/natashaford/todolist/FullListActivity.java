@@ -49,4 +49,9 @@ public class FullListActivity extends menuClass{
         startActivity(intent);
     }
 
+    public void onClickNewList(View v){
+        Intent intent = new Intent(this, NewTaskActivity.class);
+        startActivity(intent);
+    }
+
 }
