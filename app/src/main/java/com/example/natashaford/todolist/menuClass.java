@@ -6,10 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-/**
- * Created by natashaford on 07/07/2017.
- */
-
 public class menuClass extends AppCompatActivity {
 
     @Override

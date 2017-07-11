@@ -1,32 +1,26 @@
 <resources>
     <string name="app_name">ToDoList</string>
-
     <string name="home_title">Welcome!</string>
     <string name="home_task_button">See full task list</string>
     <string name="home_new_button">Add new task</string>
-    <string name="home_info">Information relating how to use app. To be added to later.</string>
+    <string name="home_info">You can add, view, update and delete tasks that need completing by using this app.</string>
     <string name="home">Home</string>
-
     <string name="all_tasks">Full task list</string>
-
     <string name="add_task">Add new task</string>
-
     <string name="title">Title</string>
     <string name="details">Details</string>
     <string name="save">Save</string>
     <string name="add_new">New task added to full list.</string>
-    <string name="list_check">Completed?</string>
+    <string name="list_prior">Priority</string>
     <string name="list_title">Tasks</string>
-
     <string name="update_task">Update task information</string>
     <string name="update_task_message">Task has been updated</string>
-
     <string name="delete_task_message">Task has been deleted</string>
-
-
     <string name="deleteButton">Delete</string>
     <string name="updateButton">Update</string>
     <string name="button_name">Submit</string>
-
+    <string name="high">High Priority</string>
+    <string name="med">Medium Priority</string>
+    <string name="low">Low Priority</string>
 
 </resources>

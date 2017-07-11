@@ -1,28 +1,26 @@
 package com.example.natashaford.todolist;
 
-/**
- * Created by natashaford on 07/07/2017.
- */
-
 public class Task{
 
     private int id;
     private String title;
     private String details;
+    private boolean completed;
 
     public Task(){
-
     }
 
-    public Task(int id, String title, String details){
+    public Task(int id, String title, String details, boolean completed){
         this.id = id;
         this.title = title;
         this.details = details;
+        this.completed = completed;
     }
 
-    public Task(String title, String details){
+    public Task(String title, String details, boolean completed){
         this.title = title;
         this.details = details;
+        this.completed = completed;
     }
 
     public int getId() {
@@ -48,5 +46,12 @@ public class Task{
         this.details = details;
     }
 
+    public boolean getCompleted(){
+        return completed;
+    }
+
+    public void setCompleted(boolean completed){
+        this.completed = completed;
+    }
 
 }

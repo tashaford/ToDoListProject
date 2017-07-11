@@ -4,11 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-/**
- * Created by natashaford on 07/07/2017.
- */
-
 public class SavedTextPreferences {
+
 
     private static final String PREF_SAVEDTITLE = "saved title";
     private static final String PREF_SAVEDDETAILS = "saved details";
@@ -40,5 +37,6 @@ public class SavedTextPreferences {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getString(PREF_SAVEDDETAILS, null);
     }
+
 
 }

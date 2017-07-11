@@ -32,7 +32,6 @@ public class TaskActivity extends menuClass {
 
         titleToShow.setText(currentTask.getTitle());
         detailsToShow.setText(currentTask.getDetails());
-
     }
 
     public void onClickDelete(View v){
@@ -56,6 +55,5 @@ public class TaskActivity extends menuClass {
         newIntent.putExtra("taskId", id);
         startActivity(newIntent);
     }
-
 
 }

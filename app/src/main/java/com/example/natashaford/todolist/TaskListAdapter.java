@@ -4,13 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.widget.*;
 
-/**
- * Created by natashaford on 07/07/2017.
- */
+import java.util.ArrayList;
 
 public class TaskListAdapter extends ArrayAdapter<Task> {
 
@@ -28,6 +24,9 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 
         TextView title = (TextView) listItemView.findViewById(R.id.task_title);
         title.setText(currentTask.getTitle());
+
+        CheckBox checkBox = (CheckBox) listItemView.findViewById(R.id.checkBox);
+        checkBox.setChecked(currentTask.getCompleted());
 
         listItemView.setTag(currentTask);
 
