@@ -20,6 +20,10 @@ public class menuClass extends AppCompatActivity {
             Intent intent = new Intent(this, HomePageActivity.class);
             startActivity(intent);
         }
+        if (item.getItemId() == R.id.action_priority_list){
+            Intent intent = new Intent(this, PriorityListActivity.class);
+            startActivity(intent);
+        }
         if (item.getItemId() == R.id.action_task){
             Intent intent = new Intent(this, FullListActivity.class);
             startActivity(intent);

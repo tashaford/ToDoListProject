@@ -6,63 +6,50 @@ public class Task{
     private String title;
     private String details;
     private boolean completed;
-    private String priority;
+    private String category;
+    private boolean priority;
 
     public Task(){
     }
 
-    public Task(int id, String title, String details, boolean completed, String priority){
+    public Task(int id, String title, String details, boolean completed, String category, boolean priority){
         this.id = id;
         this.title = title;
         this.details = details;
         this.completed = completed;
+        this.category = category;
         this.priority = priority;
     }
 
-    public Task(String title, String details, boolean completed, String priority){
+    public Task(String title, String details, boolean completed, String category, boolean priority){
         this.title = title;
         this.details = details;
         this.completed = completed;
+        this.category = category;
         this.priority = priority;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() {return id;}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) {this.id = id;}
 
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public String getTitle() {return title;}
 
-    public String getDetails() {
-        return details;
-    }
+    public void setTitle(String title) {this.title = title;}
 
-    public void setDetails(String details) {
-        this.details = details;
-    }
+    public String getDetails() {return details;}
 
-    public boolean getCompleted(){
-        return completed;
-    }
+    public void setDetails(String details) {this.details = details;}
 
-    public void setCompleted(boolean completed){
-        this.completed = completed;
-    }
+    public boolean getCompleted(){return completed;}
 
-    public String getPriority(){
-        return priority;
-    }
+    public void setCompleted(boolean completed){this.completed = completed;}
 
-    public void setPriority(String priority){
-        this.priority = priority;
-    }
+    public String getCategory(){return category;}
 
+    public void setCategory(String priority){this.category = priority;}
+
+    public boolean getPriority() {return priority;}
+
+    public void setPriority(boolean priority) {this.priority = priority;}
 }

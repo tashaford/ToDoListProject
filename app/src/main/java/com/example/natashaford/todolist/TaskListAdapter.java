@@ -27,11 +27,14 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
         TextView title = (TextView) listItemView.findViewById(R.id.task_title);
         title.setText(currentTask.getTitle());
 
-        TextView priority = (TextView) listItemView.findViewById(R.id.priority);
-        priority.setText(currentTask.getPriority());
+        TextView category = (TextView) listItemView.findViewById(R.id.category);
+        category.setText(currentTask.getCategory());
 
-        CheckBox checkBox = (CheckBox) listItemView.findViewById(R.id.checkBox);
-        checkBox.setChecked(currentTask.getCompleted());
+        CheckBox cbCompleted = (CheckBox) listItemView.findViewById(R.id.checkBox);
+        cbCompleted.setChecked(currentTask.getCompleted());
+
+        CheckBox cbPriority = (CheckBox) listItemView.findViewById(R.id.checkBoxPriorityList);
+        cbPriority.setChecked(currentTask.getPriority());
 
         listItemView.setTag(currentTask);
 

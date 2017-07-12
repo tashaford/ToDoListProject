@@ -23,7 +23,7 @@ public class FullListActivity extends menuClass{
         ArrayList<Task> tasks = db.getAllTasks();
 
         for (Task task : tasks) {
-            Log.d("Task :", "Id: " + task.getId() + ", Title: " + task.getTitle() + ", Details: " + task.getDetails() + ", Checked: " + task.getCompleted() + ", Priority " + task.getPriority());
+            Log.d("Task :", "Id: " + task.getId() + ", Title: " + task.getTitle() + ", Details: " + task.getDetails() + ", Checked: " + task.getCompleted() + ", Category " + task.getCategory() + ", Priority " + task.getPriority());
 
             TaskListAdapter taskAdapter = new TaskListAdapter(this, tasks);
 
@@ -37,7 +37,15 @@ public class FullListActivity extends menuClass{
         Task task = (Task)parent.getTag();
         task.setCompleted(v.isEnabled());
         DatabaseHandler db = new DatabaseHandler(this);
-        db.updateTask(task.getId(), task.getTitle(), task.getDetails(), task.getCompleted(), task.getPriority());
+        db.updateTask(task.getId(), task.getTitle(), task.getDetails(), task.getCompleted(), task.getCategory(), task.getPriority());
+    }
+
+    public void onClickPriority(View v){
+        View parent = (View) v.getParent();
+        Task task = (Task)parent.getTag();
+        task.setPriority(v.isEnabled());
+        DatabaseHandler db = new DatabaseHandler(this);
+        db.updateTask(task.getId(), task.getTitle(), task.getDetails(), task.getCompleted(), task.getCategory(), task.getPriority());
     }
 
     public void onClick(View listItem) {

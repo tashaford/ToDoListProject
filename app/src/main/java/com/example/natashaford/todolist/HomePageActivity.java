@@ -22,4 +22,9 @@ public class HomePageActivity extends menuClass {
         startActivity(intent);
     }
 
+    public void onClickPriorityList(View v){
+        Intent intent = new Intent(this, PriorityListActivity.class);
+        startActivity(intent);
+    }
+
 }
