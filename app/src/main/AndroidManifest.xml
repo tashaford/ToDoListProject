@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=" "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -21,13 +21,16 @@
             android:parentActivityName=".HomePageActivity" />
         <activity
             android:name=".TaskActivity"
-            android:parentActivityName=".FullListActivity"/>
+            android:parentActivityName=".FullListActivity" />
         <activity
             android:name=".NewTaskActivity"
             android:parentActivityName=".FullListActivity" />
         <activity
             android:name=".UpdateTaskActivity"
             android:parentActivityName=".FullListActivity">
+        </activity>
+        <activity android:name=".PriorityListActivity"
+            android:parentActivityName=".HomePageActivity">
         </activity>
     </application>
 

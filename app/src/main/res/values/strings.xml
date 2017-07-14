@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ToDoList</string>
     <string name="home_title">To Do List</string>
-    <string name="home_task_button">See full task list</string>
+    <string name="home_task_button">View full task list</string>
     <string name="home_new_button">Add new task</string>
     <string name="home_info">Welcome! By using this app you can add, view, update and delete tasks that you need to keep track of.</string>
     <string name="home">Home</string>
@@ -9,8 +9,9 @@
     <string name="add_task">Add new task</string>
     <string name="title">Title</string>
     <string name="details">Details</string>
-    <string name="priority">Priority</string>
-    <string name="prior_ex">e.g. High, medium, low</string>
+    <string name="category">Category</string>
+    <string name="priority">Priority?</string>
+    <string name="prior_ex">e.g. work, home, school.</string>
     <string name="save">Save</string>
     <string name="add_new">New task added to full list.</string>
     <string name="list_prior">Priority</string>
@@ -22,5 +23,6 @@
     <string name="updateButton">Update</string>
     <string name="button_name">Submit</string>
     <string name="completed">Completed?</string>
+    <string name="priority_tasks">View priority tasks</string>
 
 </resources>
