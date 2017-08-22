@@ -1,5 +1,5 @@
 # ToDoList
-Java &amp; Android Studio project: created an app that allows a user to add, read, update and delete tasks.
+Java &amp; Android Studio project: created an app that allows a user to add, read, update and delete tasks. Only 6 days to complete with a presentation on 7th day
 
 
 Brief given as:
